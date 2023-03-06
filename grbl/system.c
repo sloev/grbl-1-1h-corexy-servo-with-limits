@@ -334,7 +334,7 @@ void system_convert_array_steps_to_mpos(float *position, int32_t *steps)
 uint8_t system_check_travel_limits(float *target)
 {
   uint8_t idx;
-  for (idx=0; idx<N_AXIS; idx++) {
+  for (idx=0; idx<N_AXIS-1; idx++) { // ignore z-axis as has no limit switches
     #ifdef HOMING_FORCE_SET_ORIGIN
       // When homing forced set origin is enabled, soft limits checks need to account for directionality.
       // NOTE: max_travel is stored as negative
