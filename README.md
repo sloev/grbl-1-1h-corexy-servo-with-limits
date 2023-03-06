@@ -1,5 +1,7 @@
 # begin changes
 
+model: ly drawbot shipped from poland: https://www.aliexpress.com/item/32967477326.html
+
 limit switches are connected to X+ and Y+
 
 my configuration
