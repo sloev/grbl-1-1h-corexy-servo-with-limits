@@ -84,7 +84,7 @@ uint8_t limits_get_state()
   if (bit_isfalse(settings.flags,BITFLAG_INVERT_LIMIT_PINS)) { pin ^= LIMIT_MASK; }
   if (pin) {
     uint8_t idx;
-    for (idx=0; idx<N_AXIS; idx++) {
+    for (idx=0; idx<N_AXIS-1; idx++) { // IGNORE Z AXIS, as has no limit switches
       if (pin & get_limit_pin_mask(idx)) { limit_state |= (1 << idx); }
     }
     #ifdef ENABLE_DUAL_AXIS
@@ -270,7 +270,7 @@ void limits_go_home(uint8_t cycle_mask)
       if (approach) {
         // Check limit state. Lock out cycle axes when they change.
         limit_state = limits_get_state();
-        for (idx=0; idx<N_AXIS; idx++) {
+        for (idx=0; idx<N_AXIS-1; idx++) { // ignore z axisas has no limit switches
           if (axislock & step_pin[idx]) {
             if (limit_state & (1 << idx)) {
               #ifdef COREXY
