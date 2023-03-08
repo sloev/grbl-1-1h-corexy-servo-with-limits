@@ -45,7 +45,7 @@ $132 = 200.000    (Z-axis maximum travel, millimeters)
 
 I have added a freecad design and stl for a pen holder with minimal extra needs see here:
 
-![lol](./images/pen_holder.png)
+[![pen holder video](http://img.youtube.com/vi/tp7mz6pFIOo/0.jpg)](http://www.youtube.com/watch?v=tp7mz6pFIOo "pen holder")
 
 # end changes
 
